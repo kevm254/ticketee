@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
+# Use font-awesome
+gem 'font-awesome-rails', '~> 4.3'
+# Use simple-forms
+gem 'simple_form', '~> 3.1.0'
 
-
+# Use Bootstrap
+gem 'bootstrap-sass', '~> 3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record

@@ -8,5 +8,4 @@ RSpec.describe ProjectsController, type: :controller do
     message = "The project you were looking for could not be found."
     expect(flash[:alert]).to eq message
   end
-
 end
