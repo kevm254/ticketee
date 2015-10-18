@@ -9,6 +9,8 @@ gem 'simple_form', '~> 3.1.0'
 # Use pundit for auth.
 gem 'pundit', '~> 0.3.0'
 
+# Use CarrierWave
+gem 'carrierwave', "~> 0.10.0"
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
