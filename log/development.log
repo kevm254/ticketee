@@ -439,3 +439,171 @@ Migrating to AddAttachmentToTickets (20151018175414)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/admin/projects/new" for 127.0.0.1 at 2015-10-18 15:56:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::ProjectsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered admin/projects/_form.html.erb (86.0ms)
+  Rendered admin/projects/new.html.erb within layouts/application (90.1ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 11428ms (Views: 11379.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/tickets.self-5d02ac2318a8648d2079511e2db6dd1fca71758cce6877b0ce7eb6b11ccb1f44.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/responsive.self-79a1d0d5f6a29df84831e866f1a15bf081ded1c29a990d8438ae1f26f99f6f5b.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/application.self-02688df52487f4ec60ca7bd898b504ebbc720722490b8f407950fec416298483.css?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:07 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/assets/tickets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-18 15:57:08 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-18 15:57:11 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 161ms (Views: 157.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-18 15:57:11 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-18 15:57:14 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (41.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 202ms (Views: 195.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1/tickets/new" for 127.0.0.1 at 2015-10-18 15:57:16 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered tickets/_form.html.erb (69.0ms)
+  Rendered tickets/new.html.erb within layouts/application (70.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 195ms (Views: 192.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects/1/tickets" for 127.0.0.1 at 2015-10-18 15:57:31 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4c4sJ3Kbr9xq4OJOzNcFSvmzbCDJJV+rHa9B/mLtTgo8QgWXHWt5JFfIKKTM9Tqg5eH/P0XDY08nFQJT0qBgA==", "ticket"=>{"name"=>"ABC", "description"=>"123", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f04dd66d648 @tempfile=#<Tempfile:/tmp/RackMultipart20151018-18821-tnr4u4.pdf>, @original_filename="ReferenceCard.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"ticket[attachment]\"; filename=\"ReferenceCard.pdf\"\r\nContent-Type: application/pdf\r\n">, "attachment_cache"=>""}, "commit"=>"Create Ticket", "project_id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered tickets/_form.html.erb (97.5ms)
+  Rendered tickets/new.html.erb within layouts/application (98.8ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 243ms (Views: 229.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/projects/1/tickets" for 127.0.0.1 at 2015-10-18 15:57:48 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SKltzi1bfCZEdR6EsGYFnVWF7E/gy5Zno8n9pfQ+QmET311o7OS/faSBva8YZo1i/fSmA574DpQzIxSrQv922Q==", "ticket"=>{"name"=>"ABCLETS GO LETS GO", "description"=>"123 ARE YOU READY TO GO?", "attachment_cache"=>"1445201851-18821-0707/ReferenceCard.pdf"}, "commit"=>"Create Ticket", "project_id"=>"1"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tickets" ("name", "description", "project_id", "author_id", "attachment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ABCLETS GO LETS GO"], ["description", "123 ARE YOU READY TO GO?"], ["project_id", 1], ["author_id", 1], ["attachment", "ReferenceCard.pdf"], ["created_at", "2015-10-18 20:57:48.777872"], ["updated_at", "2015-10-18 20:57:48.777872"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/1/tickets/1
+Completed 302 Found in 15ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/1/tickets/1" for 127.0.0.1 at 2015-10-18 15:57:48 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"1", "id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ? AND "tickets"."id" = ? LIMIT 1  [["project_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tickets/show.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 162ms (Views: 158.1ms | ActiveRecord: 0.7ms)
