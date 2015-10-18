@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::ApplicationController
+  before_action :set_projects, only: [:new, :create, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :archive]
 
   def index
@@ -59,5 +60,9 @@ class Admin::UsersController < Admin::ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_projects
+    @projects = Project.order(:name)
   end
 end
