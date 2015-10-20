@@ -1654,3 +1654,169 @@ Processing by AttachmentsController#show as */*
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
 Sent file /home/kevm254/Desktop/ticketee/ticketee/uploads/attachment/file/1/ReferenceCardForMac.pdf (0.1ms)
 Completed 200 OK in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-20 06:08:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-10-19 11:14:18.656181"], ["current_sign_in_at", "2015-10-20 11:08:56.279668"], ["sign_in_count", 4], ["updated_at", "2015-10-20 11:08:56.281804"], ["id", 1]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 15731ms (Views: 15649.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-20 06:09:12 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-20 06:10:51 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (45.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 230ms (Views: 225.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1/edit" for 127.0.0.1 at 2015-10-20 06:10:57 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered projects/_form.html.erb (110.1ms)
+  Rendered projects/edit.html.erb within layouts/application (111.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 302ms (Views: 293.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1/tickets/new" for 127.0.0.1 at 2015-10-20 06:11:03 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered attachments/_form.html.erb (22.4ms)
+  Rendered tickets/_form.html.erb (76.0ms)
+  Rendered tickets/new.html.erb within layouts/application (77.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 255ms (Views: 229.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/attachments/new?index=1" for 127.0.0.1 at 2015-10-20 06:11:08 -0500
+Processing by AttachmentsController#new as JS
+  Parameters: {"index"=>"1"}
+  Rendered attachments/_form.html.erb (29.2ms)
+  Rendered attachments/new.html.erb (32.9ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/attachments/new?index=2" for 127.0.0.1 at 2015-10-20 06:11:15 -0500
+Processing by AttachmentsController#new as JS
+  Parameters: {"index"=>"2"}
+  Rendered attachments/_form.html.erb (46.0ms)
+  Rendered attachments/new.html.erb (48.7ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects/1/tickets" for 127.0.0.1 at 2015-10-20 06:19:50 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r1vA0AXxs9D+748Mmg0laGdM8qCCr8grxfC3egrpB0rrNiiyZ7M7aKWa9W2XrSjpbMaVmpMo4RLmN4VxggHd9w==", "ticket"=>{"name"=>"Let's test this out right now", "description"=>"Is it working?", "attachments_attributes"=>{"0"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x007f3487a9ce88 @tempfile=#<Tempfile:/tmp/RackMultipart20151020-10818-vg6ccf.pdf>, @original_filename="ReferenceCard.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"ticket[attachments_attributes][0][file]\"; filename=\"ReferenceCard.pdf\"\r\nContent-Type: application/pdf\r\n">, "file_cache"=>""}, "1"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x007f3487a9cd20 @tempfile=#<Tempfile:/tmp/RackMultipart20151020-10818-9zwu2y.pdf>, @original_filename="ReferenceCardForMac.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"ticket[attachments_attributes][1][file]\"; filename=\"ReferenceCardForMac.pdf\"\r\nContent-Type: application/pdf\r\n">, "file_cache"=>""}, "2"=>{"file_cache"=>""}}}, "commit"=>"Create Ticket", "project_id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "tickets" ("name", "description", "project_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Let's test this out right now"], ["description", "Is it working?"], ["project_id", 1], ["author_id", 1], ["created_at", "2015-10-20 11:19:50.319833"], ["updated_at", "2015-10-20 11:19:50.319833"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attachments" ("file", "ticket_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["file", "ReferenceCard.pdf"], ["ticket_id", 3], ["created_at", "2015-10-20 11:19:50.324206"], ["updated_at", "2015-10-20 11:19:50.324206"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attachments" ("file", "ticket_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["file", "ReferenceCardForMac.pdf"], ["ticket_id", 3], ["created_at", "2015-10-20 11:19:50.328245"], ["updated_at", "2015-10-20 11:19:50.328245"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/1/tickets/3
+Completed 302 Found in 29ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/projects/1/tickets/3" for 127.0.0.1 at 2015-10-20 06:19:50 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"1", "id"=>"3"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ? AND "tickets"."id" = ? LIMIT 1  [["project_id", 1], ["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAttachment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "attachments" WHERE "attachments"."ticket_id" = ? LIMIT 1[0m  [["ticket_id", 3]]
+  [1m[35mAttachment Load (0.2ms)[0m  SELECT "attachments".* FROM "attachments" WHERE "attachments"."ticket_id" = ?  [["ticket_id", 3]]
+  Rendered tickets/show.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 312ms (Views: 307.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/attachments/3" for 127.0.0.1 at 2015-10-20 06:19:56 -0500
+Processing by AttachmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAttachment Load (0.5ms)[0m  [1mSELECT  "attachments".* FROM "attachments" WHERE "attachments"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Sent file /home/kevm254/Desktop/ticketee/ticketee/uploads/attachment/file/3/ReferenceCardForMac.pdf (0.1ms)
+Completed 200 OK in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-20 06:20:48 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-10-20 11:08:56.279668"], ["current_sign_in_at", "2015-10-20 11:20:48.414175"], ["sign_in_count", 5], ["updated_at", "2015-10-20 11:20:48.416303"], ["id", 1]]
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 209ms (Views: 195.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-20 06:20:52 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 195ms (Views: 192.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/1/tickets/new" for 127.0.0.1 at 2015-10-20 06:20:54 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered attachments/_form.html.erb (22.2ms)
+  Rendered tickets/_form.html.erb (76.0ms)
+  Rendered tickets/new.html.erb within layouts/application (76.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 242ms (Views: 237.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments/new?index=1" for 127.0.0.1 at 2015-10-20 06:20:59 -0500
+Processing by AttachmentsController#new as JS
+  Parameters: {"index"=>"1"}
+  Rendered attachments/_form.html.erb (18.4ms)
+  Rendered attachments/new.html.erb (21.5ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/1/tickets/new" for 127.0.0.1 at 2015-10-20 06:30:18 -0500
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered attachments/_form.html.erb (22.2ms)
+  Rendered tickets/_form.html.erb (71.0ms)
+  Rendered tickets/new.html.erb within layouts/application (71.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 227ms (Views: 220.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/attachments/new?index=1" for 127.0.0.1 at 2015-10-20 06:30:32 -0500
+Processing by AttachmentsController#new as JS
+  Parameters: {"index"=>"1"}
+  Rendered attachments/_form.html.erb (18.3ms)
+  Rendered attachments/new.html.erb (20.8ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
