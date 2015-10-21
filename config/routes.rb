@@ -8,7 +8,11 @@ Rails.application.routes.draw do
         patch :archive
       end
     end
-    resources :states, only: [:index, :new, :create]
+    resources :states, only: [:index, :new, :create] do
+      member do
+        get :make_default
+      end
+    end
   end
 
   devise_for :users
@@ -22,5 +26,4 @@ Rails.application.routes.draw do
   end
 
   resources :attachments, only: [:show, :new]
-
 end
