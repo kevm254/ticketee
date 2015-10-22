@@ -6,9 +6,18 @@ class Ticket < ActiveRecord::Base
   belongs_to :state
   has_many :attachments, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_and_belongs_to_many :tags, uniq: true
+  attr_accessor :tag_names
   validates :name, :description, presence: true, length: { minimum: 10 }
   validates :description, length: { maximum: 1000 }
   accepts_nested_attributes_for :attachments, reject_if: :all_blank
+
+  def tag_names=(names)
+    @tag_names = names
+    names.split.each do |name|
+      self.tags << Tag.find_or_initialize_by(name: name)
+    end
+  end
 
   private
   def assign_default_state
