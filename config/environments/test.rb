@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
-  # your test database is "scratch space" for the test suite and is wiped
+  # your test database is "ccscratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
@@ -41,4 +41,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_controller.action_on_unpermitted_parameters = :raise
+  config.action_mailer.default_url_options = { host: "ticketee.dev" }
 end
