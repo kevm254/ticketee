@@ -4038,3 +4038,116 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-23 07:40:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (12.0ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 644ms (Views: 594.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/projects/new" for 127.0.0.1 at 2015-10-23 07:41:05 -0500
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered admin/projects/_form.html.erb (156.7ms)
+  Rendered admin/projects/new.html.erb within layouts/application (158.1ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 375ms (Views: 373.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 07:42:45 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (14.5ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 247ms (Views: 210.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=ABC&commit=Search" for 127.0.0.1 at 2015-10-23 07:42:56 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ABC", "commit"=>"Search", "project_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (3.1ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 188ms (Views: 182.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=ABC&commit=Search" for 127.0.0.1 at 2015-10-23 07:43:01 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ABC", "commit"=>"Search", "project_id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.3ms)
+  [1m[35mState Load (0.3ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 170ms (Views: 165.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=ABC&commit=Search" for 127.0.0.1 at 2015-10-23 07:43:02 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ABC", "commit"=>"Search", "project_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.1ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 170ms (Views: 167.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=ABC&commit=Search" for 127.0.0.1 at 2015-10-23 07:43:03 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ABC", "commit"=>"Search", "project_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+  [1m[35mState Load (0.3ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 183.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/1/tickets/1" for 127.0.0.1 at 2015-10-23 07:43:05 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"1", "id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.8ms)[0m  SELECT  "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ? AND "tickets"."id" = ? LIMIT 1  [["project_id", 1], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "tags" INNER JOIN "tags_tickets" ON "tags"."id" = "tags_tickets"."tag_id" WHERE "tags_tickets"."ticket_id" = ? LIMIT 1[0m  [["ticket_id", 1]]
+  [1m[35mAttachment Exists (0.3ms)[0m  SELECT  1 AS one FROM "attachments" WHERE "attachments"."ticket_id" = ? LIMIT 1  [["ticket_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."ticket_id" = ? AND ("comments"."id" IS NOT NULL)[0m  [["ticket_id", 1]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."ticket_id" = ? AND ("comments"."id" IS NOT NULL)  [["ticket_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered comments/_comment.html.erb (6.8ms)
+  Rendered tags/_form.html.erb (20.5ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered comments/_form.html.erb (68.0ms)
+  Rendered tickets/show.html.erb within layouts/application (118.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 303ms (Views: 280.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-23 07:43:25 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (1.4ms)
+  [1m[35mState Load (0.2ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 159ms (Views: 155.4ms | ActiveRecord: 0.5ms)
