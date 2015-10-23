@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Use devise for authentication
 gem 'devise', '~> 3.4.1'
+# Use searcher gem
+gem 'searcher', github: 'radar/searcher'
 # Use font-awesome
 gem 'font-awesome-rails', '~> 4.3'
 # Use simple-forms

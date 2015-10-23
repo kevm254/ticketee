@@ -3254,3 +3254,787 @@ Migrating to CreateJoinTableTagsTickets (20151022113315)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-23 06:06:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-10-22 05:30:43.423860"], ["current_sign_in_at", "2015-10-23 11:06:40.073330"], ["sign_in_count", 7], ["updated_at", "2015-10-23 11:06:40.074451"], ["id", 1]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (10.1ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 18999ms (Views: 18929.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:06:59 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:07:40 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (No route matches {:action=>"search", :controller=>"tickets", :project_id=>nil} missing required keys: [:project_id]):
+    19: 
+    20:   <ul class="actions">
+    21:     <li>
+    22:         <%= form_tag search_project_tickets_path(@proejct), method: :get, class: "form-inline" do %>
+    23:             <%= label_tag "search", "Search", class: "sr-only" %>
+    24:             <%= text_field_tag "search", params[:search], class: "form-control" %>
+    25:             <%= submit_tag "Search", class: "btn btn-default" %>
+  app/views/projects/show.html.erb:22:in `_app_views_projects_show_html_erb__1075784106014934497_70247668469880'
+
+
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.1ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (23.0ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (47.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:09:47 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered projects/show.html.erb within layouts/application (26.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (undefined method `tickets' for nil:NilClass):
+    33: </header>
+    34: 
+    35: <ul id="tickets">
+    36:     <% @projects.tickets.each do |ticket| %>
+    37:     <li>
+    38:       #<%= ticket.id %> -
+    39:       <%= link_to ticket.name, [@project, ticket] %>
+  app/views/projects/show.html.erb:36:in `_app_views_projects_show_html_erb__1075784106014934497_70247663041900'
+
+
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.2ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/kevm254/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (9.6ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 203ms (Views: 198.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/attachments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:10 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/attachments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:10:11 -0500
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2015-10-23 06:11:45 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search", "project_id"=>"1"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.9ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 199ms (Views: 193.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/1/tickets/search?utf8=%E2%9C%93&search=abc&commit=Search" for 127.0.0.1 at 2015-10-23 06:11:48 -0500
+Processing by TicketsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"abc", "commit"=>"Search", "project_id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.7ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 416ms (Views: 413.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/1/tickets/1" for 127.0.0.1 at 2015-10-23 06:11:54 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"1", "id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT  "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ? AND "tickets"."id" = ? LIMIT 1[0m  [["project_id", 1], ["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Exists (0.2ms)[0m  SELECT  1 AS one FROM "tags" INNER JOIN "tags_tickets" ON "tags"."id" = "tags_tickets"."tag_id" WHERE "tags_tickets"."ticket_id" = ? LIMIT 1  [["ticket_id", 1]]
+  [1m[36mAttachment Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "attachments" WHERE "attachments"."ticket_id" = ? LIMIT 1[0m  [["ticket_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."ticket_id" = ? AND ("comments"."id" IS NOT NULL)  [["ticket_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."ticket_id" = ? AND ("comments"."id" IS NOT NULL)[0m  [["ticket_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered comments/_comment.html.erb (6.3ms)
+  Rendered tags/_form.html.erb (19.5ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered comments/_form.html.erb (93.0ms)
+  Rendered tickets/show.html.erb within layouts/application (142.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "states".* FROM "states"
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 329ms (Views: 310.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-23 06:17:37 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered projects/index.html.erb within layouts/application (1.5ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 324ms (Views: 320.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:17:39 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.7ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 163ms (Views: 160.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.4ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 167ms (Views: 163.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/attachments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/attachments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:18:36 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (3.6ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 165ms (Views: 160.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/attachments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/attachments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:19:01 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:19:22 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (7.3ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 206ms (Views: 202.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/attachments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/attachments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:19:23 -0500
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2015-10-23 06:20:51 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.8ms)
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT "states".* FROM "states"[0m
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 185ms (Views: 181.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin/states.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/users.self-9af1852bc39424a4814c90a6f7f8acb7d27dbb879303138a1e9fd8eb3c9032c1.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/application.self-ad7f1fa47e252fc043f5f8ad689b3c15098d92495efa39e1069a835bb9732f14.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/attachments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/responsive.self-9725112192f23282a43a889166ed611e26ff35422d6b99b78df4c889dfd1bf48.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/projects.self-8861831ca385329a54a7ced082fc666463a005de2699ff3393f96af665243811.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/tickets.self-9eb50e0d4b4bc1c3fe792058cbb6b945203f9f280a78a31c6f9863b813c8a27f.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/application.self-d8380f85b5aef9f20f99bcce7d268b5fecfe93d1de9e4a16271271fac2c29d40.css?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-f7aef9d98ee5ece34a6a92a6a15bba777d93e8d908b75c95a85088277f394200.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-896ab026e6823f5cef2441e07dac53d0692a5b772ac58b1ce20aa624c342d3f4.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/button.self-d19f3e2bcd3a7a4d75c11b9141b3fabd2c11987da1e99c85548ec3ecf8db30c3.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-93820e9b486e375a7fb4477602def3a6f8381fa6d50938d5378297ffbe4a1248.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-b2e5e14483e6c31343a83861b7d487620f143d6fc2d07d5ae7544b6b225ba6be.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-30536ae4d54b2685c26b5787ed0eb549a9075717fe690cce6270873bedf2df00.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-9b77df34cbbb08ec93a806d6cdb741f04e3dbf3389978a0679146f2d2987bc89.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-9616c4e856b57659b67da3c6f2adcd584b5601ef4bebcdadab8ebb387d80bb25.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-c5c6ed008955656d345067e9821d79f1216b8383134d08465d4aa1a33a2b93b4.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-bcfe54f3132bf16a8c5ce4289e47eba488f6522a08f49f378a037061c6c7aa4c.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-3aa41fbe871573b34e0ebddf31598cd5a11a9841ca85f90934ea46326e46626d.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/application.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-b73e9c9111d01148e24bbc46e096782e024dc5db630e7078cf11ed2587ef8551.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/states.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/admin/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/attachments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/tags.self-0798ce89c44defb593c794ce6f106647b11dd962fdc7a4cf946bcafff0d52fa4.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/tickets.self-32da638b00880d74d10456409c45b686df480f6bf052d84cfdddadef5aa5fb00.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
+
+
+Started GET "/assets/fontawesome-webfont-3c4a1bb7ce3234407184f0d80cc4dec075e4ad616b44dcc5778e1cfb1bc24019.woff2?v=4.4.0" for 127.0.0.1 at 2015-10-23 06:20:52 -0500
