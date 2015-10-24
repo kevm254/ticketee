@@ -10,6 +10,9 @@ gem 'font-awesome-rails', '~> 4.3'
 gem 'simple_form', '~> 3.1.0'
 # Use pundit for auth.
 gem 'pundit', '~> 0.3.0'
+# Use fog for deployment
+gem 'fog', '~> 1.29.0'
+
 
 # Use CarrierWave
 gem 'carrierwave', "~> 0.10.0"
