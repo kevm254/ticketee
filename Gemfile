@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.3"
 
 # Use devise for authentication
 gem 'devise', '~> 3.4.1'
@@ -14,7 +15,8 @@ gem 'pundit', '~> 0.3.0'
 gem 'fog', '~> 1.29.0'
 # use rails12factor for logging
 gem "rails_12factor", group: :production
-
+# use puma webserver for production
+gem "puma", group: :production
 
 # Use CarrierWave
 gem 'carrierwave', "~> 0.10.0"
