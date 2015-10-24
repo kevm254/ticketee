@@ -12,6 +12,8 @@ gem 'simple_form', '~> 3.1.0'
 gem 'pundit', '~> 0.3.0'
 # Use fog for deployment
 gem 'fog', '~> 1.29.0'
+# use rails12factor for logging
+gem "rails_12factor", group: :production
 
 
 # Use CarrierWave
