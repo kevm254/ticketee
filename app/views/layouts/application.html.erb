@@ -22,10 +22,9 @@
 </head>
 
 <body>
-<%= render "layouts/navbar" %>
+<div class="container-fluid">
+  <%= render "layouts/navbar" %>
 
-
-<div class="container">
     <% flash.each do |key, message| %>
         <div class="alert alert-<%= key %>">
           <%= message %>
@@ -33,6 +32,7 @@
     <% end %>
 
     <%= yield %>
+
 </div>
 </body>
 </html>
